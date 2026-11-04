@@ -1,0 +1,42 @@
+{
+  "tema": "Backup",
+  "status": "pendente",
+  "precisa_revisao": false,
+  "problemas_restantes": [],
+  "incertezas": [],
+  "legenda": "Deixar arquivos na mesma unidade de armazenamento traz uma falsa sensação de segurança. Se o componente para de funcionar, tudo vai embora junto. Backup real exige separação física ou rotinas bem configuradas. Precisa de ajuda para estruturar a segurança dos seus dados antes que aconteça algum imprevisto? Mande uma mensagem para a AnaFixTech.\n\n#assistenciatecnica #manutencaodecomputadores #backup #anapolis #suporteti",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Copiar seus arquivos na mesma pasta do computador não é backup.",
+      "texto": "A gente explica o porquê."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O disco estraga inteiro",
+      "texto": "Se a placa lógica do seu HD queimar, você perdeu tanto o original quanto a cópia que estava no mesmo lugar. O risco atinge os dois dados ao mesmo tempo."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Regra básica de segurança",
+      "texto": "Backup de verdade precisa morar em outro hardware. Um pen drive guardado na gaveta, um HD externo ou um serviço confiável na nuvem."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Verifique a saúde do HD",
+      "codigo": "Abra o Prompt de Comando\nDigite wmic diskdrive get status\nPressione Enter\nSe aparecer Pred Fail,\nsua unidade vai parar em breve.",
+      "texto": "Faça a cópia urgente se o teste acusar falha."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "A armadilha da nuvem",
+      "texto": "Sua pasta do Google Drive ou OneDrive no computador espelha o que você apaga. Se o arquivo somar lá, some na nuvem também."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Quer montar uma rotina automática que realmente protege seus documentos contra perda?",
+      "texto": "Chama a gente no WhatsApp para configurar isso no seu computador ou na sua empresa em Anápolis."
+    }
+  ],
+  "instagram_id": null
+}

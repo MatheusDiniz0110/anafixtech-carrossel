@@ -1,0 +1,47 @@
+{
+  "tema": "HD x SSD",
+  "status": "pendente",
+  "precisa_revisao": false,
+  "problemas_restantes": [],
+  "incertezas": [],
+  "legenda": "Achar que o computador está lento por falta de memória é o erro mais comum que a gente vê na bancada. Na maioria das vezes, o HD antigo é que está segurando todo o desempenho da máquina. Quer resolver isso sem dor de cabeça e com seus arquivos no lugar certo? Chama a AnaFixTech no WhatsApp e a gente resolve para você.\n\n#assistenciatecnica #anapolis #computador #ssd #manutencao",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Seu computador demora dez minutos para abrir o Windows?",
+      "texto": "A culpa não é da falta de memória."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O gargalo real",
+      "texto": "O HD mecânico tem peças que giram fisicamente para ler os dados. Ele lê a no máximo cem megabytes por segundo. O processador fica esperando o disco trabalhar."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Memória não resolve lentidão de disco",
+      "texto": "Colocar mais memória RAM em um computador com HD é como colocar mais carros em uma estrada de terra. O trânsito continua preso no mesmo lugar."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Como o SSD funciona",
+      "texto": "O SSD usa chips de memória flash sem nenhuma peça móvel. Ele alcança facilmente quinhentos megabytes por segundo nos modelos SATA e muito mais nos modelos NVMe."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Verifique seu disco",
+      "codigo": "Abra o Gerenciador de Tarefas\nClique na aba Desempenho\nVeja se o Disco está em 100%",
+      "texto": "Se o uso fica travado em cem porcento mesmo com o computador ocioso, o HD está no limite da vida útil."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O que muda na prática",
+      "texto": "O computador liga em segundos, os programas abrem na hora e o sistema para de travar do nada. A troca do HD por SSD revive qualquer máquina antiga."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Quer ver seu computador rápido de verdade?",
+      "texto": "A gente faz a troca do HD por SSD clonando todo o seu sistema sem perder seus arquivos. Manda uma mensagem aqui em Anápolis."
+    }
+  ],
+  "instagram_id": null
+}

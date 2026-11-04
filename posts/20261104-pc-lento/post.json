@@ -1,0 +1,43 @@
+{
+  "tema": "PC lento",
+  "status": "pendente",
+  "precisa_revisao": false,
+  "problemas_restantes": [],
+  "incertezas": [],
+  "legenda": "A culpa da lentidão raramente é do processador. A gente bate o olho primeiro no tipo de disco, no uso da memória RAM e na sujeira acumulada dentro do gabinete. Trocar peças no escuro só joga dinheiro fora. Se o seu computador está arrastado, chama a gente no WhatsApp para uma avaliação honesta.\n\n#anapolis #assistenciatecnica #manutencaodecomputadores #informatica #anapolina",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Seu PC travando não é culpa do processador.",
+      "texto": "A gente olha outras três coisas primeiro."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "1. O HD mecânico virou um gargalo",
+      "texto": "Windows 10 e 11 exigem SSD. Se o seu sistema ainda roda em um disco de leitura mecânica, o uso fica em cem por cento só abrindo o navegador."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "2. Memória RAM no limite",
+      "texto": "Quatro gigabytes já não dão conta do Chrome com dez abas abertas e o Teams rodando em segundo plano. O computador começa a usar o disco como memória."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Como ver o estrago",
+      "codigo": "Ctrl + Shift + Esc\nClique em Desempenho\nOlhe o Disco e a Memória",
+      "texto": "Se qualquer um dos dois bater cem por cento sem você fazer nada pesado, o problema está aí."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "3. Superaquecimento por sujeira",
+      "titulo_alternativo": "3. Poeira e pasta térmica velha",
+      "texto": "O processador reduz a velocidade sozinho para não derreter quando a ventoinha entope de poeira e a pasta térmica vira uma pedra."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Quer resolver isso sem trocar de computador à toa?",
+      "texto": "Manda uma mensagem pra gente aqui em Anápolis e a gente avalia o que vale a pena atualizar na sua máquina."
+    }
+  ],
+  "instagram_id": null
+}
