@@ -16,8 +16,10 @@ Quando você confiar no resultado, crie a variável `AUTO_APPROVE=1` no GitHub e
 **1. Repositório.** Crie um repositório **público** no GitHub e suba esta pasta. (O Instagram baixa as imagens por URL pública;
 o agente usa `raw.githubusercontent.com`, de graça.)
 
-**2. Claude.** Crie uma chave em console.anthropic.com e salve como secret `ANTHROPIC_API_KEY`
-(Settings > Secrets and variables > Actions). A API é paga por uso; um carrossel custa centavos.
+**2. IA (gratuita).** Entre em aistudio.google.com com sua conta Google, crie uma chave da Gemini API (não pede cartão) e salve
+como secret `GEMINI_API_KEY` (Settings > Secrets and variables > Actions). Em AI Studio, confira o ID de um modelo Flash ou
+Flash-Lite com cota gratuita e, se for diferente de `gemini-flash-latest`, ponha em `GEMINI_MODEL`. Para usar o Claude
+no lugar, defina `LLM_PROVIDER=claude` e `ANTHROPIC_API_KEY` (pago).
 
 **3. Instagram.** A conta `@anafixtech_informatica15` precisa ser **Profissional** (Comercial ou Criador) e estar ligada a uma
 **Página do Facebook**. Depois:

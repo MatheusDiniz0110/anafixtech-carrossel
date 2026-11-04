@@ -1,9 +1,9 @@
 """Gera o carrossel com Claude, passa no detector de 'cara de IA' e reescreve até limpar."""
 import json
 import re
-from anthropic import Anthropic
 from . import config as C
 from .slop import lint
+from .llm import completar
 
 SYSTEM = f"""Você escreve carrosséis de Instagram para a {C.BRAND}, empresa de informática de {C.CITY} (GO) que presta
 assistência técnica, manutenção de hardware, instalação e correção de software, recuperação e backup de dados,
@@ -48,9 +48,8 @@ SAÍDA: somente JSON válido, sem markdown, neste formato:
 }}"""
 
 
-def _chamar(client: Anthropic, mensagens, max_tokens=3000) -> str:
-    r = client.messages.create(model=C.MODEL, max_tokens=max_tokens, system=SYSTEM, messages=mensagens)
-    return "".join(b.text for b in r.content if b.type == "text")
+def _chamar(_client, mensagens, max_tokens=3000) -> str:
+    return completar(SYSTEM, mensagens, max_tokens)
 
 
 def _json(texto: str) -> dict:
@@ -62,7 +61,7 @@ def _json(texto: str) -> dict:
 
 def gerar_post(tema: str, angulo: str = "", tentativas: int = 4) -> tuple[dict, list[str]]:
     """Retorna (post, problemas_restantes)."""
-    client = Anthropic()
+    client = None
     pedido = f"Tema: {tema}\n"
     if angulo:
         pedido += f"Ângulo: {angulo}\n"
@@ -89,7 +88,7 @@ def gerar_post(tema: str, angulo: str = "", tentativas: int = 4) -> tuple[dict, 
 
 
 def novas_ideias(qtd: int, ja_usados: list[str]) -> list[dict]:
-    client = Anthropic()
+    client = None
     pedido = (
         f"Liste {qtd} temas de informática para carrosséis, que atraiam pessoas e pequenos negócios de {C.CITY} com "
         "problemas reais de computador, celular, rede, dados e segurança. Misture hardware, software, dados e dia a dia "

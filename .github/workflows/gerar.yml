@@ -14,7 +14,7 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
       - name: Repor a fila de temas se estiver acabando
-        env: { ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", LLM_PROVIDER: "gemini" }
         run: |
           python - <<'PY'
           import json
@@ -24,7 +24,7 @@ jobs:
           PY
           if [ "$(cat restam.txt)" -lt 5 ]; then python -m agent.main ideias --n 15; fi
       - name: Gerar 3 posts
-        env: { ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", LLM_PROVIDER: "gemini" }
         run: python -m agent.main gerar --n 3
       - name: Salvar no repositório
         run: |

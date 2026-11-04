@@ -9,8 +9,6 @@ POSTS_DIR = ROOT / "posts"
 FONTS_DIR = ROOT / "assets" / "fonts"
 TOPICS_FILE = ROOT / "topics.json"
 
-MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5-5")
-
 # Marca
 BRAND = "AnaFixTech"
 HANDLE = "@anafixtech_informatica15"
