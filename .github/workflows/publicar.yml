@@ -1,0 +1,28 @@
+name: Publicar no Instagram
+on:
+  schedule:
+    - cron: "0 14 * * 1,3,5"   # seg/qua/sex 11h (Brasília)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Publicar o próximo post liberado
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          AUTO_APPROVE: ${{ vars.AUTO_APPROVE }}
+        run: python -m agent.main publicar
+      - name: Registrar como publicado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Post publicado"
+          git push

@@ -1,0 +1,36 @@
+name: Gerar carrosséis
+on:
+  schedule:
+    - cron: "0 12 * * 0"   # domingo 09h (Brasília): gera os posts da semana
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Repor a fila de temas se estiver acabando
+        env: { ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        run: |
+          python - <<'PY'
+          import json
+          f = json.load(open("topics.json", encoding="utf-8"))
+          restam = sum(1 for t in f if not t.get("usado"))
+          open("restam.txt", "w").write(str(restam))
+          PY
+          if [ "$(cat restam.txt)" -lt 5 ]; then python -m agent.main ideias --n 15; fi
+      - name: Gerar 3 posts
+        env: { ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}" }
+        run: python -m agent.main gerar --n 3
+      - name: Salvar no repositório
+        run: |
+          rm -f restam.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Novos carrosséis para revisão"
+          git push
