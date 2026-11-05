@@ -1,0 +1,49 @@
+{
+  "tema": "Phishing por WhatsApp",
+  "status": "pendente",
+  "precisa_revisao": true,
+  "problemas_restantes": [],
+  "incertezas": [
+    "Nem todo banco usa exclusivamente .com.br (ex: Nubank usa nubank.com.br, mas pode ter subdomínios variados). A regra 'sempre .com.br ou .gov.br' cobre a grande maioria dos bancos tradicionais brasileiros."
+  ],
+  "legenda": "Golpe de WhatsApp não tem erro de português, tem pressa. Verificar o domínio leva 10 segundos e evita dor de cabeça de horas. Já recebeu link suspeito hoje? Manda print pra gente ver.\n\n#segurancadainformacao #phishing #golpewhatsapp #anapolis #anafixtech",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Link de banco ou entrega no WhatsApp? Pare 10 segundos.",
+      "texto": "O golpe usa pressa. A verificação leva menos que ler a mensagem."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O domínio verdadeiro fica antes da primeira barra",
+      "texto": "Em https://itau.com.br.falso.site/login, o site é 'falso.site'. O banco fica no subdomínio. Leia da direita para a esquerda até a primeira barra."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Bancos brasileiros não usam .com, .net ou .xyz no domínio principal",
+      "texto": "Oficial é sempre .com.br ou .gov.br. Qualquer outra terminação no domínio raiz é golpe. Salve os domínios reais nos favoritos e só acesse por lá."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Encurtadores escondem o destino real",
+      "texto": "bit.ly, cutt.ly, tinyurl: você não vê para onde vai. No WhatsApp, pressione o link (segure) e escolha 'Copiar link'. Cole no navegador ou no Virustotal antes de abrir."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Verifique no terminal (Linux/Mac/WSL)",
+      "codigo": "curl -sI https://link-suspeito.com\n# Olhe 'Location:' e 'Server:'",
+      "texto": "O cabeçalho HTTP mostra redirecionamentos e o servidor real. Se o 'Location' aponta para domínio desconhecido, não clique."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Mensagem de entrega pede taxa ou 'atualização de endereço'",
+      "texto": "Correios, transportadoras e iFood não cobram taxa extra por link no WhatsApp. Rastreio oficial vem por SMS do número curto (5 dígitos) ou no app da loja."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Clicou e digitou senha? Troque agora no app oficial do banco.",
+      "texto": "Ative 2FA no WhatsApp (Configurações > Conta > Verificação em duas etapas). Se o celular ficou lento ou esquentou depois do clique, a gente limpa e revisa a segurança."
+    }
+  ],
+  "instagram_id": null
+}

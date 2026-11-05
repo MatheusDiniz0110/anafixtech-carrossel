@@ -1,0 +1,49 @@
+{
+  "tema": "Memória RAM",
+  "status": "pendente",
+  "precisa_revisao": true,
+  "problemas_restantes": [],
+  "incertezas": [
+    "Recomendação de 16 GB pode variar conforme carga de trabalho específica"
+  ],
+  "legenda": "Escritório leve roda com 8 GB mas 16 GB evita lentidão. Veja no Gerenciador se o uso passa de 80%. Quer saber se seu PC precisa de upgrade?\n\n#memoria ram #upgrade pc #gerenciador de tarefas #escritorio #anapolis",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Quanta RAM o escritório precisa hoje",
+      "texto": "Veja o uso real no Gerenciador"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Mínimo viável",
+      "texto": "8 GB roda Windows e Office sem travar"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Folga recomendada",
+      "texto": "16 GB dá folga para várias abas e chamadas"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Abrir Gerenciador de Tarefas",
+      "codigo": "Ctrl+Shift+Esc\nDesempenho → Memória\nLeia Em uso e Disponível",
+      "texto": "Esses passos mostram o consumo atual"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Sinal de alerta",
+      "texto": "Se Em uso passa de 80% constante falta RAM"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Upgrade comum",
+      "texto": "Trocar 8 por 16 GB costuma resolver"
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Precisa de mais memória",
+      "texto": "Chama a gente no WhatsApp e a gente avalia seu equipamento"
+    }
+  ],
+  "instagram_id": null
+}

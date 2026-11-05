@@ -1,0 +1,55 @@
+{
+  "tema": "Wi-Fi fraco",
+  "status": "pendente",
+  "precisa_revisao": true,
+  "problemas_restantes": [],
+  "incertezas": [
+    "Ganho exato de 3 a 6 dBm ao elevar o roteador varia com mobília e material da laje; valor é estimativa prática."
+  ],
+  "legenda": "Muita gente gasta em repetidor sem antes mover o roteador ou trocar o canal. Dois comandos rápidos mostram se o gargalo é rádio ou link. Já passou por isso? Conta nos comentários qual foi a solução.\n\n#anapolisgo #wifibr #redesdomesticas #suporterti #anatec",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Seu Wi-Fi é fraco? Não compre repetidor ainda",
+      "texto": "Dois testes de 5 minutos resolvem a maioria dos casos"
+    },
+    {
+      "tipo": "texto",
+      "titulo": "O inimigo número 1: parede de tijolo e micro-ondas",
+      "texto": "Sinal 2,4 GHz atravessa alvenaria mal. Coloque o roteador no cômodo central, longe de forno e caixa d'água. Antena vertical cobre andar de baixo; horizontal cobre o mesmo andar."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Altura importa mais que potência",
+      "texto": "Roteador no chão perde 3 a 6 dBm só de móveis. Suba 1,5 m em prateleira ou suporte de parede. Ganho real costuma superar repetidor barato."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Canal congestionado mata velocidade",
+      "texto": "Vizinhos no mesmo canal criam colisão. No 2,4 GHz use só 1, 6 ou 11. No 5 GHz prefira canais DFS (100 a 144) se seus dispositivos suportarem."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Como ver canais livres no Windows",
+      "codigo": "netsh wlan show networks mode=bssid",
+      "texto": "Rode no CMD. Procure 'Channel' e 'Signal'. Escolha o menos usado com sinal acima de -70 dBm."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "No Android use o app WiFi Analyzer",
+      "codigo": "Abra > Gráfico de canais\nVeja estrelas no 2,4 e 5 GHz\nTroque no painel do roteador",
+      "texto": "Gratuito, sem anúncio invasivo. Mostra ocupação em tempo real."
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Teste de mesa: cabo no notebook",
+      "texto": "Conecte direto no roteador. Se a velocidade sobe para o contratado, o problema é rádio. Se continua lento, chame a operadora antes de gastar com hardware."
+    },
+    {
+      "tipo": "cta",
+      "titulo": "Ajustou tudo e ainda tem zona de sombra?",
+      "texto": "A gente dimensiona access point PoE, passa cabo por fora e configura roaming 802.11k/v/r. Chama no WhatsApp que a gente resolve."
+    }
+  ],
+  "instagram_id": null
+}
