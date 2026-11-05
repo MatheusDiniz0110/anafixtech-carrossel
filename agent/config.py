@@ -26,7 +26,9 @@ CODE_BG = (22, 29, 42)
 AUTO_APPROVE = os.getenv("AUTO_APPROVE", "0") == "1"
 IG_USER_ID = os.getenv("IG_USER_ID", "")
 IG_ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN", "")
-GRAPH = "https://graph.facebook.com/v21.0"
+# Instagram API com Login do Instagram (não exige Página do Facebook).
+# Se um dia usar token de Página do Facebook, defina IG_GRAPH=https://graph.facebook.com/v21.0
+GRAPH = os.getenv("IG_GRAPH", "https://graph.instagram.com/v21.0")
 
 
 def public_base_url() -> str:

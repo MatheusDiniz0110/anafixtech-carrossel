@@ -1,9 +1,11 @@
 """
 Uso:
-  python -m agent.main ideias [--n 20]       # pede temas novos ao Claude e coloca na fila (topics.json)
+  python -m agent.main ideias [--n 20]       # pede temas novos ao modelo de IA e coloca na fila (topics.json)
   python -m agent.main gerar  [--n 3]        # gera N posts da fila, renderiza e deixa em posts/ (status: pendente)
   python -m agent.main publicar              # publica o post mais antigo aprovado
   python -m agent.main listar                # mostra o estado de cada post
+  python -m agent.main video [--post PASTA]  # transforma um carrossel em vídeo explicativo ANIMADO e narrado (1 post ou o mais recente)
+  python -m agent.main renovar               # renova o token do Instagram (a cada ~50 dias) e imprime o novo
 """
 import argparse
 import json
@@ -99,10 +101,37 @@ def cmd_publicar():
     print("Nenhum post liberado para publicar.")
 
 
+def cmd_video(nome: str | None, sem_ia: bool, estatico: bool = False):
+    from .video import montar as montar_estatico
+    from .animar import montar_animado
+    montar = montar_estatico if estatico else montar_animado
+    posts = [p.parent for p in _posts()]
+    if nome:
+        alvo = [C.POSTS_DIR / nome]
+    else:
+        alvo = [p for p in posts if not (p / "video.mp4").exists()][-1:]
+    for pasta in alvo:
+        print(f"Montando vídeo: {pasta.name}")
+        print("  pronto:", montar(pasta, usar_llm=not sem_ia))
+
+
+def cmd_renovar():
+    import requests
+    r = requests.get("https://graph.instagram.com/refresh_access_token",
+                     params={"grant_type": "ig_refresh_token", "access_token": C.IG_ACCESS_TOKEN}, timeout=30)
+    print(r.status_code, r.text)
+    if r.ok:
+        print("\nNovo token acima. Atualize o secret: gh secret set IG_ACCESS_TOKEN")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["ideias", "gerar", "publicar", "listar"])
+    ap.add_argument("cmd", choices=["ideias", "gerar", "publicar", "listar", "renovar", "video"])
     ap.add_argument("--n", type=int, default=3)
+    ap.add_argument("--post", default=None)
+    ap.add_argument("--estatico", action="store_true", help="vídeo: slides parados em vez de animação")
+    ap.add_argument("--sem-ia", action="store_true", help="vídeo: lê os slides em vez de pedir falas à Gemini")
     a = ap.parse_args()
     {"ideias": lambda: cmd_ideias(a.n), "gerar": lambda: cmd_gerar(a.n),
-     "publicar": cmd_publicar, "listar": cmd_listar}[a.cmd]()
+     "publicar": cmd_publicar, "listar": cmd_listar, "renovar": cmd_renovar,
+     "video": lambda: cmd_video(a.post, a.sem_ia, a.estatico)}[a.cmd]()

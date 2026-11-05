@@ -14,7 +14,9 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
       - name: Repor a fila de temas se estiver acabando
-        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", LLM_PROVIDER: "gemini" }
+        env:
+          LLM_PROVIDER: "openrouter"
+          OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY }}"
         run: |
           python - <<'PY'
           import json
@@ -24,7 +26,9 @@ jobs:
           PY
           if [ "$(cat restam.txt)" -lt 5 ]; then python -m agent.main ideias --n 15; fi
       - name: Gerar 3 posts
-        env: { GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}", LLM_PROVIDER: "gemini" }
+        env:
+          LLM_PROVIDER: "openrouter"
+          OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY }}"
         run: python -m agent.main gerar --n 3
       - name: Salvar no repositório
         run: |
